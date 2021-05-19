@@ -14,13 +14,17 @@ public class Main03 {
 
         int[] arr = new int[10];
         randomArrGen(arr);
+        int element = 1;
         System.out.println("Generated Array: " + Arrays.toString(arr));
         String genArrayInString = Arrays.toString(arr);
         System.out.println("Generated Array in String (check): " + genArrayInString);
-        int element = 1;
         System.out.println("Is in the Array the element present: " + contains(arr, element));
 
-        int check = Arrays.binarySearch(arr, element);
+        int[] copiedArray = arr.clone();
+        System.out.println("Skopiowana tablica do 2. rozwiązania: " + Arrays.toString(copiedArray));
+        Arrays.sort(copiedArray);
+        System.out.println("Skopiowana tablica do 2. rozwiązania - posortowana: " + Arrays.toString(copiedArray));
+        int check = Arrays.binarySearch(copiedArray, element);
         if (check >= 0) {
             System.out.println("2nd solution: Is in the Array the element present: true");
         } else {

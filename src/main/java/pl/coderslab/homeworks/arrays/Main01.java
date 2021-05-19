@@ -23,7 +23,7 @@ public class Main01 {
         int[] arrClone = Arrays.copyOf(arr, arr.length);
         Arrays.sort(arrClone);
         uniqueValues[0] = arrClone[0];
-        System.out.println("Sortowanie we wnętrzu metody: " + Arrays.toString(arrClone));
+        System.out.println("Sortowanie we wnętrzu metody skopiowanej tablicy: " + Arrays.toString(arrClone));
         for (int i = 1; i < arrClone.length; i++) {
             if (arrClone[i] != arrClone[i - 1]) {
                 uniqueValues = Arrays.copyOf(uniqueValues, uniqueValues.length + 1);
