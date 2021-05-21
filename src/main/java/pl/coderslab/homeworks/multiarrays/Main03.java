@@ -19,7 +19,7 @@ public class Main03 {
                 counter++;
             }
         }
-        double avg = (double) sum / counter;          //CHECK
+        double avg = (double) sum / counter;
 
         int counterLess = 0;
         int counterMore = 0;
@@ -32,7 +32,7 @@ public class Main03 {
             }
         }
         System.out.println("Srednia to: " + avg);
-        return new int[] {counterLess, counterMore};     //CHECK
+        return new int[] {counterLess, counterMore};
     }
 
 }
