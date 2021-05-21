@@ -7,9 +7,11 @@ public class Main01 {
         String string = "za każdym razem zamienię małe a na Duże A";
         char forReplace = 'a';
         char replacement = 'A';
-//        System.out.println("wynik: " + replaceChar(string, forReplace, replacement));
+        System.out.println("wynik: " + replaceChar(string, forReplace, replacement));
         System.out.println("wynik 2: " + replaceChar2(string, forReplace, replacement));
-        System.out.println("oryginał: " + string);
+        System.out.println("bez uzycia stworzonej metody: " + string.replaceAll(String.valueOf(forReplace), String.valueOf(replacement)));  //CHECK
+        string.replaceAll(String.valueOf(forReplace), String.valueOf(replacement));
+        System.out.println("oryginał: " + string);            //CHECK
     }
 
     public static String replaceChar(String str, char forReplace, char replacement) {
