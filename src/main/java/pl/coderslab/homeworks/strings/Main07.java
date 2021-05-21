@@ -1,14 +1,21 @@
 package pl.coderslab.homeworks.strings;
 
 
+import java.util.Arrays;
+import java.util.Locale;
+
 public class Main07 {
 
     public static void main(String[] args) {
-        String str = "Cholernie nie lubię pieprzonych poniedziałków bez jebanej kawy lub choć herbaty";
+
+//2 variants, 2 solutions
+
+        String str = "Cholernie nie lubię pieprzonych poniedziałków bez jebanej Kawy lub choć herbaty";
         String[] words = {"cholera", "cholernie", "kurde", "pieprz", "pieprzonych", "jebanej", "debil"};
         String censoredString = censor(str, words);
         System.out.println("oryginał: " + str);
         System.out.println("ocenzurowany: " + censoredString);
+        System.out.println("słowa do ocenzurowania: " + Arrays.toString(words));
     }
 
     public static String censor(String str, String[] words) {
@@ -21,6 +28,14 @@ public class Main07 {
                 }
             }
         }
+
+//   2nd solution:
+//        Arrays.sort(words);
+//        for (int i = 0; i < strArray.length; i++) {
+//            if (Arrays.binarySearch(words, strArray[i].toLowerCase()) >= 0) {
+//                strArray[i] = "****";
+//            }
+//        }
 
         StringBuilder censoredString = new StringBuilder();
         for (int i = 0; i < strArray.length - 1; i++) {
