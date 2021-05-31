@@ -18,6 +18,9 @@ public class Main05 {
         }
 
         System.out.println("Test tablicy i błędu: " + Arrays.toString(elements));
+
+//        indexOfAfterSort(elements, value);
+//        System.out.println("Test tablica oryginalna po metodzie: " + Arrays.toString(elements));
     }
 
     public static int indexOf(int[] elements, int value) {
@@ -38,6 +41,8 @@ public class Main05 {
     public static int indexOfAfterSort(int[] elements, int value) {
         int[] cloneElements = elements.clone();
         Arrays.sort(cloneElements);
+        System.out.println("tablica posortowana: " + Arrays.toString(cloneElements));
+        System.out.println("tablica oryginalna: " + Arrays.toString(elements));
         return Arrays.binarySearch(cloneElements, value);
     }
 
