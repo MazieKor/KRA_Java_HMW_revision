@@ -39,10 +39,10 @@ public class Main03 {
                 System.out.println("wprowadz dokładnie 4 dane: imię, nazwisko, rok urodzenia, płeć (K/M)");
                 continue;
             }
-            while (!scanArray[3].toUpperCase().equals("K") && !scanArray[3].toUpperCase().equals("M")) {  //NEW
+            while (!scanArray[3].toUpperCase().equals("K") && !scanArray[3].toUpperCase().equals("M")) {
                 System.out.println("Podaj poprawnie płeć (K/M). Aby wyjść wpisz quit");
                 scanArray[3] = scan.nextLine().trim();
-                if(scanArray[3].equalsIgnoreCase("quit")) {
+                if(scanArray[3].equalsIgnoreCase("Quit")) {
                     System.out.println("Podaj swoje: imię, nazwisko, rok urodzenia, płeć (K/M). Aby wyjść z programu wpisz \"quit\"");
                     continue retirementLoop;
                 }
@@ -66,21 +66,21 @@ public class Main03 {
                     scanArray[2] = scan.nextLine().trim();
                     if (scanArray[2].equalsIgnoreCase("quit")){
                         System.out.println("Podaj swoje: imię, nazwisko, rok urodzenia, płeć (K/M). Aby wyjść z programu wpisz \"quit\"");
-                        continue retirementLoop;   //NEW
+                        continue retirementLoop;
                     }
                 }
             }
             dataArray = Arrays.copyOf(dataArray, dataArray.length + 1);
-            dataArray[dataArray.length - 1] = scanArray;  // NEW moge wprowadzić tablice na index tabl. 2-wymiar
+            dataArray[dataArray.length - 1] = scanArray;
             System.out.println("TEST tablicy 2-wymiarowej: " + Arrays.deepToString(dataArray));
             System.out.println("Podaj swoje: imię, nazwisko, rok urodzenia, płeć (K/M). Aby wyjść z programu wpisz \"quit\"");
         }
         String [] retirementArray = new String[0];
         for (int i = 0; i < dataArray.length; i++) {
-            if(Integer.parseInt(dataArray[i][2]) <= 1961 && dataArray[i][3].equalsIgnoreCase("K") || // NEW method
+            if(Integer.parseInt(dataArray[i][2]) <= 1961 && dataArray[i][3].equalsIgnoreCase("K") ||
                     Integer.parseInt(dataArray[i][2]) <= 1956 && dataArray[i][3].equalsIgnoreCase("M") ) {
                 retirementArray = Arrays.copyOf(retirementArray, retirementArray.length+1);
-                retirementArray[retirementArray.length-1] = dataArray[i][0] + " " + dataArray[i][1]; // NEW - takie przypisanie
+                retirementArray[retirementArray.length-1] = dataArray[i][0] + " " + dataArray[i][1];
             }
         }
         return retirementArray;
