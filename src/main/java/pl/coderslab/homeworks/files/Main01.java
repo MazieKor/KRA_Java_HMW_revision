@@ -3,8 +3,11 @@ package pl.coderslab.homeworks.files;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main01 {
@@ -36,6 +39,11 @@ public class Main01 {
 //2 Solution:
     public static int count(String fileName){
         Path path = Paths.get(fileName);
+        try {
+            List<String> linesInFile = Files.readAllLines(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
