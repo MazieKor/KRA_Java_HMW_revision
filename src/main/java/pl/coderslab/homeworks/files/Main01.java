@@ -20,8 +20,6 @@ public class Main01 {
             System.out.println("liczba znaków w pliku to: " + numberOfSignsInFile);
         } else if (numberOfSignsInFile < 0)
             System.out.println("plik jest pusty " + numberOfSignsInFile );
-
-
     }
 
     public static int count(String fileName){
