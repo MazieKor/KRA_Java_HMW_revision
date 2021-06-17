@@ -31,7 +31,7 @@ public class Main01 {
         }
 
     }
-
+//1st Solution:
     public static int count(String fileName) {
         File file = new File(fileName);
         int numberOfSignsInFile = 0;
@@ -49,12 +49,12 @@ public class Main01 {
             System.out.println("Podany plik nie został znaleziony");
             return -2;
         }
-                                                                    //NEW: mimo błędu wykonało się to co poniżej catcha - return jest tu konieczny
+
     }
 
-    //2nd Solution:
+//2nd Solution:
     public static int count2(String fileName) throws IOException {
-        StringBuilder lineInFile = new StringBuilder();  //NEW inicjalizować mogę też nullem (było już?)
+        StringBuilder lineInFile = new StringBuilder();
         Path path = Paths.get(fileName);
         List<String> linesInFile = Files.readAllLines(path);
         for (String row : linesInFile) {
